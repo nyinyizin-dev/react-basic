@@ -24,22 +24,33 @@
     <footer>Footer</footer>
 
     <script type="text/babel">
-        const Main = () => {
-            return <div>Hello React this is main tag</div>
-        }
+      const Main = () => {
+        let name = "nyi nyi";
+        let number = 20;
+        let className = "my-class-name";
 
-      let rootContainer = document.getElementById('main')
+        // let clickHandler = () => alert("hello react");
+        return (
+          <div className={className}>
+            <h3>Name: {name.toUpperCase()}</h3>
+            <p>Age: {number}</p>
+            <p>{new Date().toDateString()}</p>
+
+            <button onClick={(e) => console.log(e)}>click me</button>
+          </div>
+        );
+      };
+
+      let rootContainer = document.getElementById("main");
 
       // create react element
       let e = React.createElement;
 
       // create react root element
-     let root = ReactDOM.createRoot(rootContainer)
+      let root = ReactDOM.createRoot(rootContainer);
 
-     // render the react root
-     root.render(e(Main))
-
-
+      // render the react root
+      root.render(e(Main));
     </script>
   </body>
 </html>
